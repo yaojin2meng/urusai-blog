@@ -122,8 +122,8 @@ export default {
     const imgMatch = path.match(/^\/v\/(.+?)\/img$/);
     if (imgMatch) {
       const { id, ext } = parseId(imgMatch[1]);
-      const imageUrl = `https://i.urusai.cc/${encodeURIComponent(id)}`;
-      const rawUrl = `https://i.urusai.cc/${encodeURIComponent(id)}.${encodeURIComponent(ext)}`;
+      const imageUrl = `https://i.urusai.cc/${encodeURIComponent(id)}.${encodeURIComponent(ext)}`;
+      const rawUrl = imageUrl;
       return new Response(viewHtml(imageUrl, rawUrl), {
         headers: {
           'Content-Type': 'text/html; charset=utf-8',
