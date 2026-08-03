@@ -6,8 +6,5 @@ compatibility_flags = ["nodejs_compat"]
 [env.production]
 name = "urusai-blog"
 
-[site]
-bucket = "./public"
-
 [triggers]
 crons = []
