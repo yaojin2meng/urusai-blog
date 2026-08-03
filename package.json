@@ -1,0 +1,17 @@
+{
+  "name": "urusai-blog",
+  "version": "2.0.0",
+  "description": "Personal blog with image viewer - QQ/WeChat anti-crawler image hosting",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "wrangler deploy --dry-run",
+    "test": "node --check src/worker.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "keywords": ["cloudflare", "workers", "blog", "image-hosting"],
+  "license": "MIT"
+}
