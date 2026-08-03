@@ -1,3 +1,13 @@
 name = "urusai-blog"
 main = "src/worker.js"
 compatibility_date = "2026-07-31"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "urusai-blog"
+
+[site]
+bucket = "./public"
+
+[triggers]
+crons = []
