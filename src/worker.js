@@ -39,12 +39,6 @@ export default {
     const p = params.get('p');
     const id = params.get('id') || '';
 
-    if (path === '/' || path === '/index.html') {
-      return new Response(blogHtml(), {
-        headers: { 'Content-Type': 'text/html; charset=utf-8' },
-      });
-    }
-
     if (p === 'landing' && id) {
       const gatePath = '/?p=gate&id=' + encodeURIComponent(id);
       return new Response(landingHtml(gatePath), {
@@ -64,6 +58,12 @@ export default {
       const imageUrl = `https://i.urusai.cc/${encodeURIComponent(imgId)}.${encodeURIComponent(ext)}`;
       return new Response(viewHtml(imageUrl, imageUrl, ua), {
         headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, noarchive' },
+      });
+    }
+
+    if (path === '/' || path === '/index.html') {
+      return new Response(blogHtml(), {
+        headers: { 'Content-Type': 'text/html; charset=utf-8' },
       });
     }
 
